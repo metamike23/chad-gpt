@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <!-- Include CSS Lib  -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" > 
+<link type="text/css" href="editor.css" rel="stylesheet"/>
+        
+        </head>
+        <div id="txtEditor"></div>
+        <body>
+            <script>
+                $(function() {  
+                 $("#txtEditor").Editor({
+                  texteffects:true,
+                  aligneffects:true,
+                  textformats:true,
+                  fonteffects:true,
+                  actions : true,
+                  insertoptions : true,
+                  extraeffects : true,
+                  advancedoptions : true,
+                  screeneffects:true,
+                  bold: true,
+                  italics: true,
+                  underline:true,
+                  insert_img:true,
+                  fonts:'',
+                  styles:'',
+                  print:true,
+                  rm_format:true,
+                  status_bar:true,
+                  font_size:12,
+                  color:'#000000',
+                  splchars:'',
+                  insert_table:true,
+                  select_all:true,
+                  togglescreen:true
+                 });  
+                });
+                </script>
+            
+
+            <script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="editor.js"></script>
+
+        </body>
+</html>
