@@ -52,14 +52,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const decoder = new TextDecoder("utf-8");
         
             const responseText = document.createElement('div');
-            responseText.className = 'ai-response'; // Add a class to the response text element
+            responseText.className = 'ai-response'; 
             responseContainer.appendChild(responseText);
+        
+            let fullResponse = "";
         
             while (true) {
                 const { done, value } = await reader.read();
                 if (done) break;
+        
                 const chunk = decoder.decode(value, { stream: true });
-                responseText.textContent += chunk;
+                fullResponse += chunk; // Accumulate response text
+                responseText.innerHTML = formatResponse(fullResponse);
+                Prism.highlightAll();
                 scrollToBottom();
             }
         
@@ -107,7 +112,8 @@ function handleCopyClick(e) {
     }
 }
 
-            const deleteButton = document.createElement('button');
+
+const deleteButton = document.createElement('button');
 deleteButton.textContent = '🗑️ Delete';
 deleteButton.className = 'btn btn-danger btn-sm';
 deleteButton.onclick = () => {
@@ -151,3 +157,22 @@ deleteButton.onclick = () => {
         }
     });
 });
+
+
+
+function formatResponse(response) {
+    return response
+        .replace(/```(\w+)?\n([\s\S]+?)```/g, (match, lang, code) => {
+            lang = lang || "plaintext"; // Default to plaintext if no language is specified
+            return `<pre><code class="language-${lang}">${escapeHTML(code)}</code></pre>`;
+        });
+}
+
+// Escape HTML to prevent issues with Prism
+function escapeHTML(str) {
+    return str.replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&#39;");
+}
