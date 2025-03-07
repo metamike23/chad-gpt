@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Function to fetch completion from the v1/chat/completions endpoint
 async function fetchCompletion(prompt, n_predict, stream) {
-    const response = await fetch("http://belto.myftp.biz:9999/v1/chat/completions", {
+    const response = await fetch("http://bkjkbkjbjkbk/v1/chat/completions", {
         method: 'POST',
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
@@ -64,7 +64,7 @@ Your primary job is to ensure that students in BUS101 can learn Python with conf
             n_predict,
             stream
         }),
-        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer qQhUOBjNamjELp2g69ww8APeFD8FNHW8' }
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer hhhhhhhh' }
     });
     return response;
 }
