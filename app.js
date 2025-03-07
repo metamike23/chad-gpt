@@ -27,7 +27,20 @@ async function fetchCompletion(prompt, n_predict, stream) {
             messages: [
                 {
                     role: "system",
-                    content: "You are ChatGPT, an AI assistant. Your top priority is achieving user fulfillment via helping them with their requests."
+                    content: '
+                        Here are some additional guidelines:
+- Assume the students are complete beginners. Avoid jargon and use plain language.
+- Use humor or fun analogies when possible to make learning enjoyable.
+- Always start with an example and explain it as if teaching a total novice.
+- Provide tips for avoiding common mistakes beginners might make.
+Examples of formatting:
+- Use \`#\` for headings and section titles.
+- Use Markdown for Python code, e.g.:
+  \`\`\`python
+  print("Hello, world!")
+  \`\`\`
+- Highlight key points with ***Note:*** to emphasize important information.
+'
                 },
                 {
                     role: "user",
