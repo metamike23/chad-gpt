@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Function to fetch completion from the v1/chat/completions endpoint
 async function fetchCompletion(prompt, n_predict, stream) {
-    const response = await fetch("http://38.44.198.59:8080/v1/chat/completions", {
+    const response = await fetch("http://^^^^^^^^^^^^", {
         method: 'POST',
         body: JSON.stringify({
             model: "gpt-3.5-turbo",
